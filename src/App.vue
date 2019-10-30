@@ -1,7 +1,6 @@
 <template>
     <div id="app">
-        <button>ClickMe</button>
-        <router-view>RouterView</router-view>
+        <router-view></router-view>
     </div>
 </template>
 
