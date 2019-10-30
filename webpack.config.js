@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 const history = require('connect-history-api-fallback')
 const convert = require('koa-connect')
 
@@ -57,6 +58,13 @@ module.exports = {
         */
         use: ['babel-loader', 'eslint-loader']
       },
+
+	    {
+	    	test: /\.vue$/,
+		    use: [
+		    	'vue-loader'
+		    ]
+	    },
 
       {
         // 匹配 html 文件
@@ -144,7 +152,8 @@ module.exports = {
       https://github.com/jantimon/html-webpack-plugin/issues/870
       */
       chunksSortMode: 'none'
-    })
+    }),
+    new VueLoaderPlugin()
   ]
 }
 
