@@ -1,14 +1,14 @@
 <template>
     <div id="app">
         <button>ClickMe</button>
-        <router-view></router-view>
+        <router-view>RouterView</router-view>
     </div>
 </template>
 
 <script>
-	export default {
-		name: "app"
-	}
+  export default {
+    name: "App"
+  }
 </script>
 
 <style scoped>
